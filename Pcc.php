@@ -167,7 +167,7 @@ class Pcc
             mkdir($this->dataDir,0777,true);     
         }
 
-        $key = md5($this->project.$this->startTime.$this->endTime.$this->consumeTime);
+        $key =  $this->project.$this->startTime.$this->endTime.$this->consumeTime;
         $key = $this->isAllMode ? 'All' : $key;
         $pccFile = $this->project.'.'.$key.'.pcc'; 
         $fp = fopen($this->dataDir.'/'.$pccFile, "w");
